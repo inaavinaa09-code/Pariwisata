@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Indonesia</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="logo">Explore<span>Indonesia</span></h1>
+
+      <!-- Toggle Menu Button -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Navigation -->
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#destinasi">Destinasi</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Slideshow -->
+  <section id="home" class="hero-slideshow">
+    <div class="slide active" style="background-image: url('gambar1.jpg');"></div>
+    <div class="slide" style="background-image: url('gambar2.jpg');"></div>
+    <div class="slide" style="background-image: url('gambar3.jpg');"></div>
+
+    <div class="overlay">
+      <div class="hero-text">
+        <h2>Jelajahi Keindahan Alam Indonesia</h2>
+        <p>Temukan surga tersembunyi dari Sabang sampai Merauke</p>
+        <a href="#destinasi" class="btn">Lihat Destinasi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinasi Section -->
+  <section id="destinasi" class="destinasi">
+    <div class="container">
+      <h2 class="section-title">Destinasi Unggulan</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="gambar1.jpg" alt="Bali">
+          <h3>Bali</h3>
+          <p>Pulau dewata dengan keindahan pantai dan budaya yang memikat.</p>
+        </div>
+        <div class="card">
+          <img src="gambar2.jpg" alt="Raja Ampat">
+          <h3>Raja Ampat</h3>
+          <p>Surga bawah laut terbaik di dunia yang ada di Papua Barat.</p>
+        </div>
+        <div class="card">
+          <img src="gambar3.jpg" alt="Bromo">
+          <h3>Gunung Bromo</h3>
+          <p>Keindahan matahari terbit dari gunung berapi aktif di Jawa Timur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang Kami -->
+  <section id="tentang" class="tentang">
+    <div class="container">
+      <h2 class="section-title">Tentang Kami</h2>
+      <p>Kami adalah platform informasi pariwisata Indonesia yang bertujuan mempromosikan keindahan alam dan budaya Nusantara ke seluruh penjuru dunia.</p>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="kontak" class="kontak">
+    <div class="container">
+      <h2 class="section-title">Kontak</h2>
+      <p>Hubungi kami melalui email: <a href="mailto:info@exploreindonesia.com">info@exploreindonesia.com</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Explore Indonesia. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Script: Toggle Menu -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Auto slideshow
+    let slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000); // 5 detik
+  </script>
+</body>
+</html>
